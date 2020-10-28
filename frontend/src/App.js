@@ -21,6 +21,19 @@ class App extends React.Component {
     id: 0,
     showFavorites: false
   }
+  // MAKE A REQUEST TO THE BACKEND TO PUSH TO FAVORITES
+  componentDidMount = () => {
+    axios.get('http://localhost:8000/api/foods').then(
+        (response) => {
+            this.setState({
+              favorites: response.data
+            })
+            console.log(this.state.favorites)
+        }
+
+    )
+  console.log(this.state.favoritesData);
+  }
 
   // TOGGLE SEARCH FORM
   toggleSearch = (event) => {
@@ -57,40 +70,33 @@ class App extends React.Component {
   }
   // MAKE A YELP REQUEST FOR FAVORITES
   yelpRESTById = () => {
-        axios.get("https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/aEtbXqbkf2BnwEVWQ2yjUw" ,
-         {
-          headers: {
-            Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`
-         }
-       }
-     )
-        .then((res) => {
-         this.setState({
-           favoritesData: res.data
-         })
-         console.log(res.data);
-     })
-       .catch((err) => {
-      console.log ('error')
-    })
+
+    for(let i = 0; i < this.state.favorites.length ;i++){
+
+      axios.get("https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/" + (this.state.favorites[i].food_id),
+                   {
+                    headers: {
+                      Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`
+                   }
+                 }
+               )
+                  .then((res) => {
+
+                     this.state.favoritesData.push(res.data)
+
+                   
+               })
+                 .catch((err) => {
+                console.log ('error')
+              })
+    }
  }
   // MAKE A POST TO THE BACKEND
   addFavoriteToBackend = () => {
     axios.post('http://localhost:8000/api/foods',  {food_id: this.state.food_id}).then((res) => {
-            this.someFunction()
+            this.componentDidMount()
           })
           console.log(this.state.food_id);
-  }
-  // MAKE A REQUEST TO THE BACKEND TO PUSH TO FAVORITES
-  someFunction = () => {
-    axios.get('http://localhost:8000/api/foods').then(
-        (response) => {
-            this.setState({
-              favorites: response.data
-            })
-            console.log(response.data);
-        }
-    )
   }
 
   //CHANGE ID FOR CARDS
@@ -184,6 +190,8 @@ class App extends React.Component {
       showSearch: false,
       showCards: false
     })
+  this.yelpRESTById();
+  console.log("here", this.state.favoritesData);
   }
   render = () => {
     return (
@@ -196,7 +204,7 @@ class App extends React.Component {
 
         {this.state.showCards ? <Card data={this.state.searchedData} id={this.state.food_id} changeID={this.changeID} recordFavorites={this.theSumOfTwoFunctions}/> : null}
 
-        {this.state.showFavorites ? <Favorites something={this.someFunction} requestForFavorites = {this.yelpRESTById} /> : null}
+        {this.state.showFavorites ? <Favorites favoritesData={this.state.favoritesData}/> : null}
 
         <Footer />
 

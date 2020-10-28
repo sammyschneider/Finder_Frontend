@@ -9,12 +9,12 @@ class Card extends React.Component {
 
   render = () => {
     return (
-      <div>
+      <div card-fav>
       {
         this.props.data.map((food) => {
           return (
             <div>
-            {this.props.id===food.id ? <div className="card card-cascade wider food-card">
+            {this.props.id===food.id ? <div className="card card-cascade wider food-card card-first">
 
                 <div className="view view-cascade overlay">
                   <div className="flip-card">
