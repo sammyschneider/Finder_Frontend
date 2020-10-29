@@ -6,6 +6,7 @@ import Nav from './components/Nav'
 import Card from './components/Card'
 import Footer from './components/Footer'
 import Favorites from './components/Favorites'
+import Landing from './components/Landing'
 
 class App extends React.Component {
   state = {
@@ -13,13 +14,15 @@ class App extends React.Component {
     favorites: [],
     favoritesData: [],
     food_id: '',
-    showSearch: true,
+    showSearch: false,
     locationInput: '',
     radiusInput:'',
     termInput:'',
     showCards: false,
     id: 0,
-    showFavorites: false
+    showFavorites: false,
+    emptyArray: [],
+    showLanding: true
   }
   // MAKE A REQUEST TO THE BACKEND TO PUSH TO FAVORITES
   componentDidMount = () => {
@@ -28,11 +31,12 @@ class App extends React.Component {
             this.setState({
               favorites: response.data
             })
+            this.yelpRESTById();
             console.log(this.state.favorites)
-        }
 
+        }
     )
-  console.log(this.state.favoritesData);
+
   }
 
   // TOGGLE SEARCH FORM
@@ -70,7 +74,7 @@ class App extends React.Component {
   }
   // MAKE A YELP REQUEST FOR FAVORITES
   yelpRESTById = () => {
-
+    let emptyArray= [];
     for(let i = 0; i < this.state.favorites.length ;i++){
 
       axios.get("https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/" + (this.state.favorites[i].food_id),
@@ -82,14 +86,18 @@ class App extends React.Component {
                )
                   .then((res) => {
 
-                     this.state.favoritesData.push(res.data)
+                  console.log(res.data);
+                  return emptyArray.push(res.data)
 
-                   
                })
                  .catch((err) => {
                 console.log ('error')
               })
     }
+    this.setState({
+      favoritesData: emptyArray
+    })
+    console.log(emptyArray);
  }
   // MAKE A POST TO THE BACKEND
   addFavoriteToBackend = () => {
@@ -190,14 +198,21 @@ class App extends React.Component {
       showSearch: false,
       showCards: false
     })
-  this.yelpRESTById();
-  console.log("here", this.state.favoritesData);
+    console.log("here", this.state.favoritesData);
+  }
+  showApp = () => {
+    this.setState({
+      showLanding:false,
+      showSearch:true
+    })
   }
   render = () => {
     return (
       <div>
 
         <Nav toggleSearch={this.toggleSearch} renderFavorites={this.renderFavorites}/>
+
+        {this.state.showLanding ? <Landing showApp={this.showApp} /> : null}
 
         {this.state.showSearch?<Form submit={this.yelpREST} updateLocation={this.updateLocation} updateRadius={this.updateRadius}
         updateTerm={this.updateTerm}/> :null}

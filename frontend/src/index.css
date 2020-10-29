@@ -51,7 +51,7 @@
 }
 .search-width {
   width: 50%;
-  margin: 8% auto;
+  margin: 10% auto;
   align-items: center;
 }
 .card-footer{
@@ -72,28 +72,84 @@
   width: 40px;
   height: 40px;
 }
-#footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  /* padding: 2%; */
+#footer-color {
+background-color: #003049;
 }
-.nav-color, .footer-color, .card-footer-color, .card-back-color {
-  background-color: #4a4e69;
+.nav-color, .footer-color, .card-footer-color {
+  background-color: #003049;
 }
-/* body, .paragraph-color, input {
-  color: white;
-} */
-/* form {
-  color: white;
-} */
-.card {
-  /* background-color: #4ea8de; */
+.card-back-color {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  background-color: #eae2b7;
+  color: #003049;
 }
-.fav-cards {
-  /* display: flex; */
+.card-2 {
+  width: 33%;
+  margin: 3%;
+  margin-bottom: 8%;
 }
+
 .image-card-fav{
   width: 100%;
   height: 100%;
+}
+.fav-cards{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  background: url('https://cdn.pixabay.com/photo/2016/11/18/14/05/brick-wall-1834784_960_720.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.fav-img{
+  /* width: 100%; */
+  /* height: 250px; */
+  height: 250px;
+}
+.fav-buttons {
+  display: flex;
+  justify-content: space-around;
+}
+.landing {
+/* width: 100%;*/
+height: 100vh;
+/* background: url('https://cdn.pixabay.com/photo/2014/06/11/17/00/cook-366875__340.jpg') no-repeat center center fixed;
+background-repeat: no-repeat;
+background-size: cover; */
+background-image: url('https://cdn.pixabay.com/photo/2014/06/11/17/00/cook-366875_960_720.jpg');
+background-size: cover;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+.landing-padding{
+  padding: 5%;
+}
+.form-width {
+  width: 80%;
+  padding: 8%;
+}
+.background-everything{
+  background: url('https://cdn.pixabay.com/photo/2016/11/18/14/05/brick-wall-1834784_960_720.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100%;
+}
+.page-footer {
+  position: fixed;
+  width: 100%;
+  bottom:0;
+}
+body {
+  color: #003049;
+  font-family: 'Grandstander', cursive;
+}
+a {
+  color: #003049;
+}
+.h1-flip {
+  font-weight: 400;
 }
