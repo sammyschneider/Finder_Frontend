@@ -38,7 +38,9 @@ class Card extends React.Component {
                   <h5 className=" pb-2">Rating: {food.rating}</h5>
                   <p className="paragraph-color">{food.categories[0].title} </p>
                     <div className="card-footer text-muted ">
-                      <button onClick={this.props.changeID} className='btn btn-outline-default waves-effect'><i className="fas fa-angle-double-left"></i></button>
+                    <div className='swiping-left'>
+                      <button onMouseUp={this.props.changeID} className='btn btn-outline-default waves-effect'><i className="fas fa-angle-double-left"></i></button>
+                    </div>
                       <button onClick={this.props.recordFavorites} className='btn btn-outline-default waves-effect'><i className="fas fa-angle-double-right"></i></button>
                     </div>
                 </div>
@@ -48,6 +50,7 @@ class Card extends React.Component {
           )
         })
       }
+
     </div>
     )
   }

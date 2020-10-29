@@ -1,6 +1,7 @@
 import React from 'react'
 
 class Landing extends React.Component {
+
   render() {
     return (
 
@@ -14,6 +15,8 @@ class Landing extends React.Component {
                 <a onClick={this.props.showApp} className="btn btn-outline-white wow fadeInDown" data-wow-delay="0.4s">Find food!</a>
 
               </div>
+
+
         </div>
 
 

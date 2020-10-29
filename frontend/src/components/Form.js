@@ -3,12 +3,15 @@ import React from 'react'
 class Form extends React.Component {
   render() {
     return (
-      <div className='background-everything'>
-      <div className='form-background'>
+
+      <div>
+      <div>
+      <h1 className = 'search-div'>Search</h1>
+      </div>
         <div className="card search-width">
             <div className="card-body px-lg-5 form-width">
                 <form className="text-center" onSubmit={this.props.submit}>
-                    <h5>Find what you are craving</h5>
+                    <h5 className='form-color-background'>Find what you are craving</h5>
                     <div className="md-form mt-3 label">
                         <input onKeyUp={this.props.updateLocation} type="text" className="form-control"/>
                         <label className="label">Where are you?</label>
@@ -25,8 +28,8 @@ class Form extends React.Component {
                 </form>
             </div>
         </div>
-        </div>
-        </div>
+      </div>
+
     )
   }
 }

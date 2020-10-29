@@ -38,6 +38,17 @@ class App extends React.Component {
     )
 
   }
+  getData = () => {
+    axios.get('http://localhost:8000/api/foods').then(
+        (response) => {
+            this.setState({
+              favorites: response.data
+            })
+            this.yelpRESTById();
+
+        }
+    )
+  }
 
   // TOGGLE SEARCH FORM
   toggleSearch = (event) => {
@@ -54,7 +65,7 @@ class App extends React.Component {
            Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`
         },
          params: {
-           location: this.state.locationInput , radius: this.state.radiusInput , term: this.state.termInput, limit: 50
+           location: this.state.locationInput , radius: this.state.radiusInput , term: this.state.termInput, limit: 20
         }
       }
     )
@@ -74,7 +85,7 @@ class App extends React.Component {
   }
   // MAKE A YELP REQUEST FOR FAVORITES
   yelpRESTById = () => {
-    let emptyArray= [];
+    let emptyArray = this.state.favorites;
     for(let i = 0; i < this.state.favorites.length ;i++){
 
       axios.get("https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/" + (this.state.favorites[i].food_id),
@@ -87,7 +98,7 @@ class App extends React.Component {
                   .then((res) => {
 
                   console.log(res.data);
-                  return emptyArray.push(res.data)
+                  emptyArray[i].key = res.data
 
                })
                  .catch((err) => {
@@ -206,6 +217,7 @@ class App extends React.Component {
       showSearch:true
     })
   }
+
   render = () => {
     return (
       <div>
@@ -219,7 +231,8 @@ class App extends React.Component {
 
         {this.state.showCards ? <Card data={this.state.searchedData} id={this.state.food_id} changeID={this.changeID} recordFavorites={this.theSumOfTwoFunctions}/> : null}
 
-        {this.state.showFavorites ? <Favorites favoritesData={this.state.favoritesData}/> : null}
+        {this.state.showFavorites ? <Favorites favoritesData={this.state.favoritesData} yelpRESTById={this.getData}/> : null}
+
 
         <Footer />
 
