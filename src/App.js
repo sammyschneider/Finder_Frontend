@@ -26,7 +26,7 @@ class App extends React.Component {
   }
   // MAKE A REQUEST TO THE BACKEND TO PUSH TO FAVORITES
   componentDidMount = () => {
-    axios.get('http://localhost:8000/api/foods').then(
+    axios.get('https://fnder.herokuapp.com/api/foods').then(
         (response) => {
             this.setState({
               favorites: response.data
@@ -39,7 +39,7 @@ class App extends React.Component {
 
   }
   getData = () => {
-    axios.get('http://localhost:8000/api/foods').then(
+    axios.get('https://fnder.herokuapp.com/api/foods').then(
         (response) => {
             this.setState({
               favorites: response.data
@@ -112,7 +112,7 @@ class App extends React.Component {
  }
   // MAKE A POST TO THE BACKEND
   addFavoriteToBackend = () => {
-    axios.post('http://localhost:8000/api/foods',  {food_id: this.state.food_id}).then((res) => {
+    axios.post('https://fnder.herokuapp.com/api/foods',  {food_id: this.state.food_id}).then((res) => {
             this.componentDidMount()
           })
           console.log(this.state.food_id);

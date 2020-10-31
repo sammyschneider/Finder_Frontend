@@ -25,7 +25,7 @@ class Card extends React.Component {
                       <div className="flip-card-back card-back-color h1-flip">
                         <h1>{food.name}</h1>
                         <h5><strong>Address:</strong> {food.location.address1}</h5>
-                        <h5><strong>Phone:</strong><a href={`tel: + ${food.phone}`}> {food.phone}</a></h5>
+                        <h5><strong>Phone:</strong><a href={`tel: ${food.phone}`}> {food.phone}</a></h5>
                         <h5><strong>Price:</strong> {food.price}</h5>
                         <h5><a href={food.url}>Menu & Reviews</a></h5>
                       </div>

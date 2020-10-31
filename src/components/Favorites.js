@@ -7,7 +7,7 @@ class Favorites extends React.Component {
     food_id: ''
   }
   deleteFavorite = (event) => {
-    axios.delete(`http://localhost:8000/api/foods/${event.target.value}`).then(res => {
+    axios.delete(`https://fnder.herokuapp.com/api/foods/${event.target.value}`).then(res => {
       this.props.yelpRESTById();
     })
   }
