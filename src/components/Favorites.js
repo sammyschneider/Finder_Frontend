@@ -33,36 +33,16 @@ class Favorites extends React.Component {
                                 <div className="card-body text-center">
                                   <h4 className="card-title">{fav.key.name}</h4>
                                   <p className="card-text">{fav.key.categories[0].title}</p>
+                                  <p className='card-text'>{fav.key.name}</p>
+                                  <p className='card-text'>{fav.key.display_phone}</p>
+                                  <p className='card-text'>Rating: {fav.key.rating}</p>
+                                  
+                                  <p className='card-text'><a href={fav.key.url}>Menu & Reviews</a></p>
                                   <div className="fav-buttons">
-                                    <button type="button" className="btn btn-outline-primary" data-toggle="modal" data-target='#something'>
-                                    More
-                                    </button>
                                     <button type="button" value={fav.id} onClick={this.deleteFavorite} className="btn btn-outline-red btn-md">Remove</button>
                                   </div>
 
-                                    <div className="modal fade" id='something' tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-                                    aria-hidden="true">
-                                      <div className="modal-dialog modal-dialog-centered" role="document">
-                                        <div className="modal-content">
-                                          <div className="modal-header">
-                                            <h4 className="modal-title w-100" id="myModalLabel">{fav.key.name}</h4>
-                                            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                                              <span aria-hidden="true">&times;</span>
-                                            </button>
-                                          </div>
-                                          <div className="modal-body">
-                                            <h6>{fav.key.name}</h6>
-                                            <h6>{fav.key.display_phone}</h6>
-                                            <h6>Rating: {fav.key.rating}</h6>
-                                            <h6>{fav.key.price}</h6>
-                                            <h6><a href={fav.key.url}>Menu & Reviews</a></h6>
-                                          </div>
-                                          <div className="modal-footer justify-content-center">
-                                            <button type="button" className="btn btn-outline-info" data-dismiss="modal">Close</button>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
+
 
 
                                   </div>
