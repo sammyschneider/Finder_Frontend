@@ -9,7 +9,8 @@ class Card extends React.Component {
 
   render = () => {
     return (
-      <div card-fav>
+      <div>
+      <h3 className = 'search-div'>Swipe right to favorite, left to pass!</h3>
       {
         this.props.data.map((food) => {
           return (
