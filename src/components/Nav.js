@@ -4,7 +4,7 @@ class Nav extends React.Component {
   render() {
     return (
         <nav className="navbar navbar-expand-lg navbar-dark nav-color fixed-top nav-pills">
-          <a className="navbar-brand" href="#">F'nder</a>
+          <a className="navbar-brand" href="https://fnder.netlify.app/">F'nder</a>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"
             aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
