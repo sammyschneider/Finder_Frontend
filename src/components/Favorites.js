@@ -34,13 +34,13 @@ class Favorites extends React.Component {
                                   <h4 className="card-title">{fav.key.name}</h4>
                                   <p className="card-text">{fav.key.categories[0].title}</p>
                                   <div className="fav-buttons">
-                                    <button type="button" className="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                                    <button type="button" className="btn btn-outline-primary" data-toggle="modal" data-target='#something'>
                                     More
                                     </button>
                                     <button type="button" value={fav.id} onClick={this.deleteFavorite} className="btn btn-outline-red btn-md">Remove</button>
                                   </div>
 
-                                    <div className="modal fade" id="exampleModalCenter" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+                                    <div className="modal fade" id='something' tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
                                     aria-hidden="true">
                                       <div className="modal-dialog modal-dialog-centered" role="document">
                                         <div className="modal-content">

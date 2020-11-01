@@ -141,7 +141,7 @@ background-attachment: fixed;
   height: 100%;
 } */
 body {
-  background: url('https://cdn.pixabay.com/photo/2017/05/15/10/26/bar-2314410_960_720.jpg') no-repeat center center fixed;
+  background: url('https://cdn.pixabay.com/photo/2016/11/18/15/53/breakfast-1835478_960_720.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -187,4 +187,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.btn-outline-default {
+  font-size: 1em;
 }
