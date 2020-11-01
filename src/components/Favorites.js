@@ -37,10 +37,12 @@ class Favorites extends React.Component {
                                     <button type="button" className="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModalCenter">
                                     More
                                     </button>
-                                    <div className="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+                                    <button type="button" value={fav.id} onClick={this.deleteFavorite} className="btn btn-outline-red btn-md">Remove</button>
+                                  </div>
+
+                                    <div className="modal fade" id="exampleModalCenter" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
                                     aria-hidden="true">
                                       <div className="modal-dialog modal-dialog-centered" role="document">
-
                                         <div className="modal-content">
                                           <div className="modal-header">
                                             <h4 className="modal-title w-100" id="myModalLabel">{fav.key.name}</h4>
@@ -49,7 +51,7 @@ class Favorites extends React.Component {
                                             </button>
                                           </div>
                                           <div className="modal-body">
-                                            <h6>{fav.key.location.address1}</h6>
+                                            <h6>{fav.key.name}</h6>
                                             <h6>{fav.key.display_phone}</h6>
                                             <h6>Rating: {fav.key.rating}</h6>
                                             <h6>{fav.key.price}</h6>
@@ -61,10 +63,11 @@ class Favorites extends React.Component {
                                         </div>
                                       </div>
                                     </div>
-                                    <button type="button" value={fav.id} onClick={this.deleteFavorite} className="btn btn-outline-red btn-md">Remove</button>
+
+
                                   </div>
                                 </div>
-                              </div>
+
 
 
 
