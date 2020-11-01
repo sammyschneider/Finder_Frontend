@@ -5,9 +5,11 @@ class Footer extends React.Component {
     return (
 
       <footer className="page-footer font-small blue">
-          <div className="footer-copyright text-center py-3" id='footer-color'>
+          <div className="footer-copyright text-center py-3 flex-footer" id='footer-color'>
             <a href="https://fnder.netlify.app/"> F'nder</a>
-            <a href="https://github.com/sammyschneider/Finder_Frontend"><span class="iconify fab" data-icon="logos:github" data-inline="false"></span></a>
+            <a href="https://github.com/sammyschneider/Finder_Frontend" class="nav-link waves-effect waves-light">
+                      <i class="fab fa-github"></i>
+            </a>
           </div>
       </footer>
 

@@ -183,3 +183,8 @@ a {
 .landing-btn {
   background-color: #003049;
 }
+.flex-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
