@@ -10,10 +10,7 @@ class Card extends React.Component {
   render = () => {
     return (
       <div>
-        <div className='instructions'>
-        <h3 className = 'search-div'>Swipe left to <em>pass</em>!</h3>
-          <h3 className = 'search-div'>Swipe right to <em>favorite</em>!</h3>
-        </div>
+
       {
         this.props.data.map((food) => {
           return (
@@ -43,9 +40,9 @@ class Card extends React.Component {
                   <p className="paragraph-color">{food.categories[0].title} </p>
                     <div className="card-footer text-muted ">
                     <div className='swiping-left'>
-                      <button onMouseUp={this.props.changeID} className='btn btn-outline-default waves-effect'><i className="fas fa-angle-double-left"></i></button>
+                      <button onMouseUp={this.props.changeID} className='btn waves-effect down-color'><i className="fas fa-thumbs-down"></i></button>
                     </div>
-                      <button onClick={this.props.recordFavorites} className='btn btn-outline-default waves-effect'><i className="fas fa-angle-double-right"></i></button>
+                      <button onClick={this.props.recordFavorites} className='btn waves-effect up-color'><i className="fas fa-thumbs-up"></i></button>
                     </div>
                 </div>
 

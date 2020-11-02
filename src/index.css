@@ -194,3 +194,11 @@ a {
 .instructions {
   display: flex;
 }
+.down-color{
+border:  2px solid red !important;
+color: red;
+}
+.up-color {
+  border:  2px solid blue !important;
+  color: blue;
+}
