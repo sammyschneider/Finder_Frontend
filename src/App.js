@@ -54,7 +54,8 @@ class App extends React.Component {
   toggleSearch = (event) => {
     this.setState({
       showSearch: !this.state.showSearch,
-      showFavorites: false
+      showFavorites: false,
+      showLanding: false
     });
   }
   // MAKE GET REQUEST TO YELP API
@@ -224,7 +225,7 @@ class App extends React.Component {
 
         <Nav toggleSearch={this.toggleSearch} renderFavorites={this.renderFavorites}/>
 
-        
+        {this.state.showLanding ? <Landing showApp={this.toggleSearch} /> : null}
 
         {this.state.showSearch?<Form submit={this.yelpREST} updateLocation={this.updateLocation} updateRadius={this.updateRadius}
         updateTerm={this.updateTerm}/> :null}
