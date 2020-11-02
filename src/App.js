@@ -214,7 +214,8 @@ class App extends React.Component {
   showApp = () => {
     this.setState({
       showLanding:false,
-      showSearch:true
+      showSearch:true,
+      showCards: true
     })
   }
 
@@ -224,7 +225,7 @@ class App extends React.Component {
 
         <Nav toggleSearch={this.toggleSearch} renderFavorites={this.renderFavorites}/>
 
-      
+        {this.state.showLanding ? <Landing showApp={this.showApp} /> : null}
 
         {this.state.showSearch?<Form submit={this.yelpREST} updateLocation={this.updateLocation} updateRadius={this.updateRadius}
         updateTerm={this.updateTerm}/> :null}
