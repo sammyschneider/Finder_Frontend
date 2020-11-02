@@ -206,3 +206,7 @@ color: red;
   border:  2px solid #003049 !important;
   color: #003049 !important;
 }
+.form-button:hover {
+  border:  2px solid #eae2b7 !important;
+  color: #eae2b7 !important;
+}
