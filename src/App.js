@@ -212,6 +212,19 @@ class App extends React.Component {
     })
     console.log("here", this.state.favoritesData);
   }
+  //SHOW FAVORITES TAB
+  renderFavoritesNew = () => {
+    this.setState({
+      showFavorites: false
+    })
+    this.functionForUpdatingFav();
+  }
+  //FUNCTION FOR UPDATING FAV IMMEDIATELY
+  functionForUpdatingFav = () => {
+    this.setState({
+      showFavorites:true
+    })
+  }
   showApp = () => {
     this.setState({
       showLanding:false,
@@ -232,7 +245,7 @@ class App extends React.Component {
 
         {this.state.showCards ? <Card data={this.state.searchedData} id={this.state.food_id} changeID={this.changeID} recordFavorites={this.theSumOfTwoFunctions}/> : null}
 
-        {this.state.showFavorites ? <Favorites favoritesData={this.state.favoritesData} yelpRESTById={this.getData}/> : null}
+        {this.state.showFavorites ? <Favorites favoritesData={this.state.favoritesData} yelpRESTById={this.getData} renderFavorites={this.renderFavorites} /> : null}
 
 
         <Footer />

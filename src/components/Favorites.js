@@ -9,8 +9,13 @@ class Favorites extends React.Component {
   deleteFavorite = (event) => {
     axios.delete(`https://fnder.herokuapp.com/api/foods/${event.target.value}`).then(res => {
       this.props.yelpRESTById();
+      // this.props.renderFavorites();
     })
   }
+  // componentDidUpdate = () => {
+  //   this.props.yelpRESTById();
+  //   this.props.renderFavorites();
+  // }
 
   render() {
     return (
