@@ -8,4 +8,4 @@ Stack: Backend --> Python/Django, Frontend --> React, Database --> PostgreSQL
 
 Functionality to be added: User Auth
 
-Issues: App sometimes doesn't work because of API limitations (# of requests)
+Issues: App is slow because of API limitations (# of requests)
