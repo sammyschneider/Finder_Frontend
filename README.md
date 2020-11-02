@@ -1,4 +1,4 @@
-# Finder_Frontend
+# F'nder_Frontend
 
 Link to live site: https://fnder.netlify.app/
 
