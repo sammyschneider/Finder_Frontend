@@ -24,7 +24,7 @@ class Form extends React.Component {
                         <input onKeyUp={this.props.updateTerm} type="text" className="form-control"/>
                         <label>Food type? (Leave blank for random)</label>
                     </div>
-                    <button className="btn btn-outline-default btn-rounded btn-block z-depth-0 my-4 waves-effect" type="submit">Start Swiping!</button>
+                    <button className="btn btn-outline-default btn-rounded btn-block z-depth-0 my-4 waves-effect form-button" type="submit">Start Swiping!</button>
                 </form>
             </div>
         </div>
