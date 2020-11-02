@@ -34,8 +34,8 @@ class Favorites extends React.Component {
                                   <h4 className="card-title">{fav.key.name}</h4>
                                   <p className="card-text">{fav.key.categories[0].title}</p>
                                   <p className='card-text'>{fav.key.name}</p>
-                                  <p className='card-text'><a href={`tel: ${fav.key.phone}`}> {fav.key.phone}</a></p>
                                   <p className='card-text'>Rating: {fav.key.rating}</p>
+                                  <p className='card-text'><a href={`tel: ${fav.key.phone}`}> {fav.key.phone}</a></p>
                                   <p className='card-text'><a href={fav.key.url}>Menu & Reviews</a></p>
                                   <div className="fav-buttons">
                                     <button type="button" value={fav.id} onClick={this.deleteFavorite} className="btn btn-outline-red btn-md">Remove</button>

@@ -10,7 +10,10 @@ class Card extends React.Component {
   render = () => {
     return (
       <div>
-      <h3 className = 'search-div'>Swipe right to favorite, left to pass!</h3>
+        <div className='instructions'>
+        <h3 className = 'search-div'>Swipe left to <em>pass</em>!</h3>
+          <h3 className = 'search-div'>Swipe right to <em>favorite</em>!</h3>
+        </div>
       {
         this.props.data.map((food) => {
           return (
